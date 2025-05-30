@@ -2,8 +2,8 @@
 School project in django  
 ## Starting project:  
 **vytvoření složky:**
-* <pre>mkdir school_library</pre>
-* <pre>cd school_library</pre>  
+* <pre>mkdir django_bookEshop</pre>
+* <pre>cd django_bookEshop</pre>  
 **virtualní prostředí:**
 * <pre>pyhthon -m venv .venv</pre>  
 * <pre>.venv\Scripts\activate</pre>  
