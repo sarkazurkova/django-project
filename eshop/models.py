@@ -10,7 +10,7 @@ class Autor(models.Model):
     narozeni = models.DateField(blank=True, null=True, verbose_name='Datum narození')
     umrti = models.DateField(blank=True, null=True, verbose_name='Datum úmrtí')
     biografie = models.TextField(blank=True, verbose_name='Životopis')
-    fotografie = models.ImageField(upload_to='autori', verbose_name='Fotografie')
+    fotografie = models.ImageField(upload_to='autori', verbose_name='Fotografie', blank=True, null=True)
 
     class Meta:
         ordering = ['prijmeni', 'jmeno']
