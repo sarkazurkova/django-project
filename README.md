@@ -13,5 +13,8 @@ School project in django
 * <pre>django-admin startproject django_bookEshop .</pre>
 **spuštění serveru:**
 * <pre>python manage.py runserver</pre>  
-**vytvořeni nové aplikace:**
-* <pre>python manage.py startapp eshop</pre>
+**vytvoření nové aplikace:**
+* <pre>python manage.py startapp eshop</pre>  
+**vytvoření admina:**  
+* <pre>python manage.py createsuperuser</pre>  
+* uživ. jméno: admin, heslo: adminadmin
