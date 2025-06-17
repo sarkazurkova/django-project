@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="bg-light text-success text-center text-uppercase p-3">{{ kniha.titul }}</h2>
+  <div class="row bg-light p-3 mb-2">
+    <div class="col-md-4 text-dark">
+      {% if kniha.obalka %}
+      <img src="{{ kniha.obalka.url }}" alt="{{ kniha }}" class="rounded img-fluid">
+      {% endif %}
+      <p class="mt-3">Vydáno: {{ kniha.vydavatelstvi }}, {{ kniha.rok_vydani }}</p>
+      {% for autor in kniha.autori.all%}
+            <p class="mt-3">Autor: <a href="{% url 'autor_detail' autor.pk %}">{{ autor}}</a></p>
+       {% endfor%}
+       <p class="mt-3"><b>Cena: {{ kniha.cena}} Kč</b></p>
+      <hr>
+      <p>
+      {% for zanr in kniha.zanry.all %}
+          <a href="{% url 'zanr_detail' zanr.pk %}" class="btn btn-success">{{ zanr }}</a>
+      {% endfor %}
+      </p>
+    </div>
+    <div class="col-md-8">
+      <h4 class="text-success">Obsah knihy</h4>
+      <p class="text-dark">{{ kniha.obsah }}</p>
+    </div>
+  </div>
+{% endblock %}

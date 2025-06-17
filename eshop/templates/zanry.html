@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="col-lg-12 mt-4 mb-4">
+            <h2 class="bg-light text-success text-center text-uppercase p-3">{{ nadpis }}</h2>
+            {% for zanr in zanry %}
+            <div class="row mb-3">
+                <div class="col-lg-3 text-uppercase">
+                    <h4><a href="{% url 'zanr_detail' zanr.pk %}">{{ zanr.nazev }}</a></h4>
+                </div>
+                <div class="col-lg-9">
+                    <p>{{ zanr.popis|truncatewords:30 }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+{% endblock %}

@@ -22,7 +22,8 @@ class Autor(models.Model):
 
 
 class Zanr(models.Model):
-    nazev = models.CharField(max_length=20, verbose_name='Název žánru', help_text='Zadejte název žánru')
+    nazev = models.CharField(max_length=40, verbose_name='Název žánru', help_text='Zadejte název žánru')
+    popis = models.TextField(blank=True, null=True, verbose_name='Popis žánru')
 
     class Meta:
         ordering = ['nazev']
