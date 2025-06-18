@@ -9,7 +9,7 @@
                     <img src="{{ kniha.obalka.url }}" alt="{{ kniha.titul }}" class="img-fluid">
                 </div>
                 <div class="col-lg-9">
-                    <p>{% for autor in kniha.autori.all %}{{ autor.jmeno }} {{ autor.prijmeni }}{% endfor %}</p>
+                    <p>{% for autor in kniha.autori.all %}<a href="{% url 'autor_detail' autor.pk %}">{{ autor.jmeno }} {{ autor.prijmeni }}</a>{% endfor %}</p>
                     <h3><a href="{% url 'kniha_detail' kniha.pk %}">{{ kniha.titul }}</a></h3>
                     <p>{{ kniha.obsah|truncatewords:30 }}</p>
                     <p class="alert alert-secondary">Vydáno: {{ kniha.vydavatelstvi.nazev }}, {{ kniha.rok_vydani }}</p>
